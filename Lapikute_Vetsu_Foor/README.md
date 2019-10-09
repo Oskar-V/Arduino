@@ -6,7 +6,7 @@
 | 100x | [Bi-polar R/G LEDs](https://www.oomipood.ee/en/kataloog/tme/toode?sku=TC01N0VHVw%3D%3D) | € 20,43 | (50 LED per screen/sign)
 | 100x | 200ohm takistit | tasuta? | lapi kontorist |
 | 4x | NPN transistorit (~1A 5V) | tasuta? | lapi kontorist |
-| 4x | PNP transistor (~1A 5V) | tasuta? | lapi kontorist |
+| 4x | PNP transistorit (~1A 5V) | tasuta? | lapi kontorist |
 
 ##### NB! puit/plastik LED maatriksi casei jaoks kas salvegida või veel otsutada kust/mida osta.
 ##### NB! Tuleb kontrollida, et vool ei ületaks dioodide läbilöögi piiri.
