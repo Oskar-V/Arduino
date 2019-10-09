@@ -1,22 +1,22 @@
-3x  -- https://www.aliexpress.com/item/32960193527.html?spm=a2g0o.cart.0.0.2f8f3c00ny5JL1&mp=1 -- €  9,04 -- (3.3V/0.9A versioon standard shipping)
-2x  -- https://www.aliexpress.com/item/32674295742.html?spm=a2g0o.cart.0.0.ad463c00U5mv2L&mp=1 -- €  8,34 -- (5V/1A versioon standard shipping)
-100x - https://www.oomipood.ee/en/kataloog/tme/toode?sku=TC01N0VHVw%3D%3D 		       -- € 20,43 -- (50 LED per screen/sign)
-
-eeldus:
-- 200x 100ohm takistit || 100x 200ohm takistit  -- lapi kontorist
-- 4x NPN && 4x PNP transistorit (~1A 5V)	-- lapi kontorist
+### Materjalid
+| Count | Item | Cost | Comment |
+| 3x | [wemos d1 mini PSU](https://www.aliexpress.com/item/32960193527.html?spm=a2g0o.cart.0.0.2f8f3c00ny5JL1&mp=1) | € 9,04 | (3.3V/0.9A versioon standard shipping) |
+| 2x  | [wemos d1 mini PSU](https://www.aliexpress.com/item/32674295742.html?spm=a2g0o.cart.0.0.ad463c00U5mv2L&mp=1) | € 8,34 | (5V/1A versioon standard shipping) |
+| 100x | [Bi-polar R/G LEDs](https://www.oomipood.ee/en/kataloog/tme/toode?sku=TC01N0VHVw%3D%3D) | € 20,43 | (50 LED per screen/sign)
+| 100x | 200ohm takistit | tasuta? | lapi kontorist |
+| 4x NPN && 4x PNP transistorit (~1A 5V)| tasuta? | lapi kontorist |
 
 NB! puit/plastik LED maatriksi casei jaoks kas salvegida või veel otsutada kust/mida osta.
 
-kokku panemise plaan:
+### Kokku panemise plaan:
 - esimesed 3 converterit lähevad wemos d1 minide powerimiseks
 - järgmised 2 converterit lähevad LED maatriksite powerimiseks
 - 100 bipolar/bicolar LED'i lähevad kahe LED maatriksi tegemiseks
 - takistid ja transistorid lähevad LED maatriksi powerimiseks
 
 
-LED'ide powerimise skeem falstadis: (http://falstad.com/circuit/circuitjs.html)
-//------ Copy from between these lines ------\\
+### LED'ide powerimise skeem [falstadis](http://falstad.com/circuit/circuitjs.html): 
+```
 $ 1 0.000005 10.20027730826997 50 5 43
 t 80 336 128 336 0 -1 5 0.6636286556142279 100
 t 496 336 448 336 0 -1 0 -0.6636286556142277 100
@@ -64,5 +64,4 @@ w 48 48 256 48 3
 L 528 48 592 48 0 1 false 5 0
 o 2 64 0 4099 0.625 0.025 0 2 2 3
 o 3 64 0 4099 0.625 0.00009765625 1 2 3 3
-
-\\------ Copy from between these lines ------//
+```
