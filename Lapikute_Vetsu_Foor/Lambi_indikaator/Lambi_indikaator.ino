@@ -10,54 +10,61 @@
 
 /* Global variables --------------------------------- */
 //SSID of your network
-const char ssid[] = "Lapikud";  //SSID of your Wi-Fi network
+const char ssid[] = "Lapikud";    //SSID of your Wi-Fi network
 const char pass[] = "wifiparool"; //Password of your Wi-Fi network
 
 /* Setup -------------------------------------------- */
 void setup()
 {
-  Serial.begin(115200);
-  delay(10);
+    Serial.begin(115200);
+    delay(10);
 
-  // Setup the builtin led for indication
-  pinMode(LED_BUILTIN, OUTPUT); // it is the ground pin for the LED, so LOW means LED is On
+    // Setup the builtin led for indication
+    pinMode(LED_BUILTIN, OUTPUT); // it is the ground pin for the LED, so LOW means LED is On
 
-  // Connect to Wi-Fi network
-  Serial.println();
-  Serial.print("Connecting to:  ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, pass);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  Serial.println("");
-  Serial.print("Wi-Fi connected successfully, with IP: ");
-  Serial.println(WiFi.localIP());
-}
-void loop () {
-  if (WiFi.status() == WL_CONNECTED) { // If connection still exists
-    digitalWrite(LED_BUILTIN, HIGH); // Turn the LED off if ping was successful
-  } else { // Else try to reconnect
-
-    Serial.println("Lost connection to wifi, trying to reconnect");
+    // Connect to Wi-Fi network
+    Serial.println();
+    Serial.print("Connecting to:  ");
+    Serial.println(ssid);
     WiFi.begin(ssid, pass);
-    for (byte i = 0; i < 15; i++) {
-      digitalWrite(LED_BUILTIN, HIGH);
-      delay(100);
-      digitalWrite(LED_BUILTIN, LOW);
-      delay(100);
+
+    while (WiFi.status() != WL_CONNECTED)
+    {
+        delay(500);
+        Serial.print(".");
     }
-    digitalWrite(LED_BUILTIN, LOW); // Leave the LED on after indication
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.print(".");
-    }
+
     Serial.println("");
-    Serial.print("Wi-Fi reconnected successfully, with IP: ");
+    Serial.print("Wi-Fi connected successfully, with IP: ");
     Serial.println(WiFi.localIP());
-  }
-  delay(5000); // Wait 5s before testing the connection again
+}
+void loop()
+{
+    if (WiFi.status() == WL_CONNECTED)
+    {                                    // If connection still exists
+        digitalWrite(LED_BUILTIN, HIGH); // Turn the LED off if ping was successful
+    }
+    else
+    { // Else try to reconnect
+
+        Serial.println("Lost connection to wifi, trying to reconnect");
+        WiFi.begin(ssid, pass);
+        for (byte i = 0; i < 15; i++)
+        {
+            digitalWrite(LED_BUILTIN, HIGH);
+            delay(100);
+            digitalWrite(LED_BUILTIN, LOW);
+            delay(100);
+        }
+        digitalWrite(LED_BUILTIN, LOW); // Leave the LED on after indication
+        while (WiFi.status() != WL_CONNECTED)
+        {
+            delay(500);
+            Serial.print(".");
+        }
+        Serial.println("");
+        Serial.print("Wi-Fi reconnected successfully, with IP: ");
+        Serial.println(WiFi.localIP());
+    }
+    delay(5000); // Wait 5s before testing the connection again
 }

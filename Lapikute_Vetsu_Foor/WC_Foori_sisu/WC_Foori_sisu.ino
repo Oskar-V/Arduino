@@ -11,78 +11,82 @@
 
 /* Global variables --------------------------------- */
 //SSID of your network
-const char ssid[] = "Lapikud";  //SSID of your Wi-Fi network
+const char ssid[] = "Lapikud";    //SSID of your Wi-Fi network
 const char pass[] = "wifiparool"; //Password of your Wi-Fi network
 
 // Static IPs of the two clients
-IPAddress dest0 (172, 20, 20, 69); // Defined in the WiFi DNS
-IPAddress dest1 (172, 20, 20, 70); // Defined in the WiFi DNS
-
+IPAddress dest0(172, 20, 20, 69); // Defined in the WiFi DNS
+IPAddress dest1(172, 20, 20, 70); // Defined in the WiFi DNS
 
 /* Setup -------------------------------------------- */
 void setup()
 {
-  Serial.begin(115200);
-  delay(10);
+    Serial.begin(115200);
+    delay(10);
 
-  // Setup the builtin led for indication
-  pinMode(LED_BUILTIN, OUTPUT); // it is the ground pin for the LED, so LOW means LED is On
+    // Setup the builtin led for indication
+    pinMode(LED_BUILTIN, OUTPUT); // it is the ground pin for the LED, so LOW means LED is On
 
-  // Connect to Wi-Fi network
-  Serial.println();
-  Serial.print("Connecting to:  ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, pass);
+    // Connect to Wi-Fi network
+    Serial.println();
+    Serial.print("Connecting to:  ");
+    Serial.println(ssid);
+    WiFi.begin(ssid, pass);
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
+    while (WiFi.status() != WL_CONNECTED)
+    {
+        delay(500);
+        Serial.print(".");
+    }
 
-  Serial.println("");
-  Serial.print("Wi-Fi connected successfully, with IP: ");
-  Serial.println(WiFi.localIP());
+    Serial.println("");
+    Serial.print("Wi-Fi connected successfully, with IP: ");
+    Serial.println(WiFi.localIP());
 }
 
-void loop () {
-  if (WiFi.status() == WL_CONNECTED) { // If connection still exists
+void loop()
+{
+    if (WiFi.status() == WL_CONNECTED)
+    { // If connection still exists
 
+        bool resp0 = Ping.ping(dest0, 1); // This is just a secondary check to a desired client on the network
+        int response_time0 = Ping.averageTime();
+        bool resp1 = Ping.ping(dest1, 1);
+        int response_time1 = Ping.averageTime();
+        Serial.print("Pinging: ");
+        Serial.print(dest0);
+        Serial.print(" received-response: ");
+        Serial.print((resp0) ? ("true") : ("false"));
+        Serial.print(" time: ");
+        Serial.print(response_time0);
+        Serial.println("ms");
+        Serial.print("Pinging: ");
+        Serial.print(dest1);
+        Serial.print(" received-response: ");
+        Serial.print((resp1) ? ("true") : ("false"));
+        Serial.print(" time: ");
+        Serial.print(response_time1);
+        Serial.println("ms");
 
-    bool resp0 = Ping.ping(dest0, 1); // This is just a secondary check to a desired client on the network
-    int response_time0 = Ping.averageTime();
-    bool resp1 = Ping.ping(dest1, 1);
-    int response_time1 = Ping.averageTime();
-    Serial.print("Pinging: ");
-    Serial.print(dest0);
-    Serial.print(" received-response: ");
-    Serial.print((resp0) ? ("true") : ("false"));
-    Serial.print(" time: ");
-    Serial.print(response_time0);
-    Serial.println("ms");
-    Serial.print("Pinging: ");
-    Serial.print(dest1);
-    Serial.print(" received-response: ");
-    Serial.print((resp1) ? ("true") : ("false"));
-    Serial.print(" time: ");
-    Serial.print(response_time1);
-    Serial.println("ms");
-    
-    Serial.print((resp0 && resp1)?("--- Bathrooms occupied"):("--- Atleast one bathroom free"));
-    Serial.print(" Status: [");
-    Serial.print(resp0);
-    Serial.print(",");
-    Serial.print(resp1);
-    Serial.println("] ---");
-  } else { // Else try to reconnect
-    Serial.println("Lost connection to wifi, trying to reconnect");
-    WiFi.begin(ssid, pass);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.print(".");
+        Serial.print((resp0 && resp1) ? ("--- Bathrooms occupied") : ("--- Atleast one bathroom free"));
+        Serial.print(" Status: [");
+        Serial.print(resp0);
+        Serial.print(",");
+        Serial.print(resp1);
+        Serial.println("] ---");
     }
-    Serial.println("");
-    Serial.print("Wi-Fi reconnected successfully, with IP: ");
-    Serial.println(WiFi.localIP());
-  }
-  delay(5000); // Wait 5s before testing the connection again
+    else
+    { // Else try to reconnect
+        Serial.println("Lost connection to wifi, trying to reconnect");
+        WiFi.begin(ssid, pass);
+        while (WiFi.status() != WL_CONNECTED)
+        {
+            delay(500);
+            Serial.print(".");
+        }
+        Serial.println("");
+        Serial.print("Wi-Fi reconnected successfully, with IP: ");
+        Serial.println(WiFi.localIP());
+    }
+    delay(5000); // Wait 5s before testing the connection again
 }
