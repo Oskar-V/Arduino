@@ -3,19 +3,21 @@
 | --- | --- | --- | --- |
 | 3x | [wemos d1 mini PSU](https://www.aliexpress.com/item/32960193527.html?spm=a2g0o.cart.0.0.2f8f3c00ny5JL1&mp=1) | € 9,04 | 3.3V/0.9A versioon, standard shipping |
 | 2x  | [LED matrix PSU](https://www.aliexpress.com/item/32674295742.html?spm=a2g0o.cart.0.0.ad463c00U5mv2L&mp=1) | € 8,34 | 5V/1A versioon, standard shipping |
-| 100x | [Bi-polar R/G LEDs](https://www.oomipood.ee/en/kataloog/tme/toode?sku=TC01N0VHVw%3D%3D) | € 20,43 | 50 LED per screen/sign
-| 100x | 200ohm takistit | tasuta? | lapi kontorist |
+| ~50x | [Bi-polar R/G LEDs](https://www.oomipood.ee/en/kataloog/tme/toode?sku=TC01N0VHVw%3D%3D) | € 11.08 | ~25 LED per screen/sign
+| ~50x | 200ohm takistit | tasuta? | lapi kontorist |
 | 4x | NPN transistorit (~1A 5V) | tasuta? | lapi kontorist |
 | 4x | PNP transistorit (~1A 5V) | tasuta? | lapi kontorist |
+| 2x | Case & Screen cover | materjalide kulu | lapi kontorist |
 
-##### NB! puit/plastik LED maatriksi casei jaoks kas salvegida või veel otsutada kust/mida osta.
 ##### NB! Tuleb kontrollida, et vool ei ületaks dioodide läbilöögi piiri.
 ---
 
 ## Kokku panemise plaan:
 - esimesed 3 converterit lähevad wemos d1 minide powerimiseks
+-- kaks wemos d1 mini lähevad vetsudesse
+-- üks läheb märkide kontrolleriks
 - järgmised 2 converterit lähevad LED maatriksite powerimiseks
-- 100 bipolar/bicolar LED'i lähevad kahe LED maatriksi tegemiseks
+- bipolar/bicolor LED'id lähevad kahe LED maatriksi tegemiseks
 - takistid ja transistorid lähevad LED maatriksi powerimiseks
 ---
 
