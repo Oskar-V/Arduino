@@ -5,9 +5,9 @@
 | 2x  | [LED matrix PSU](https://www.aliexpress.com/item/32674295742.html?spm=a2g0o.cart.0.0.ad463c00U5mv2L&mp=1) | € 8,34 | 5V/1A versioon, standard shipping |
 | ~50x | [Bi-polar R/G LEDs](https://www.oomipood.ee/en/kataloog/tme/toode?sku=TC01N0VHVw%3D%3D) | € 11.08 | ~25 LED per screen/sign
 | ~50x | 200ohm takistit | tasuta? | lapi kontorist |
-| 4x | NPN transistorit (~1A 5V) | tasuta? | lapi kontorist |
-| 4x | PNP transistorit (~1A 5V) | tasuta? | lapi kontorist |
-| 2x | Case & Screen cover | materjalide kulu | lapi kontorist |
+| 4x | NPN transistorit (~1A 5V) | tasuta? | lapi kontorist ? |
+| 4x | PNP transistorit (~1A 5V) | tasuta? | lapi kontorist ? |
+| 2x | Case & Screen cover | materjalide kulu | lapi kontorist ? |
 
 ##### NB! Tuleb kontrollida, et vool ei ületaks dioodide läbilöögi piiri.
 ---
